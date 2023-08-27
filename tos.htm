@@ -6,14 +6,16 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet"/>
     
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXGLBCRLN7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  
-  gtag('config', 'G-SXGLBCRLN7');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4C86YKGQS1">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-4C86YKGQS1");
+    </script>
     
     <!-- Meta Pixel Code -->  
     <script>
@@ -42,20 +44,66 @@
       h2 {
         font-family: "Open Sans", sans-serif;
         color: #24292e;
-        font-size: 1.25em;
       }
-      
+
+      .container {
+        max-width: 880px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .panel {
+        background-color: #fff;
+        border-radius: 4px;
+        padding: 1rem 2rem 2rem;
+        box-shadow:
+          0 1px 5px 0 rgba(0, 0, 0, 0.07),
+          0 7px 17px 0 rgba(0, 0, 0, 0.1);
+      }
+
+      .tos {
+        max-height: 40vh;
+        overflow: auto;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2rem;
+        line-height: 1.4375;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
       p {
         margin: 0;
         margin-bottom: 1rem;
         color: #5b5e6d;
         max-width: 55em;
-        font-size: 1.25em;
         line-height: 1.4375;
-        text-align: center;
+      }
+
+      .btn {
+        border-radius: 4px;
+        border: 1px solid #ccc !important;
+        padding: 0.5rem;
+        font-weight: 700;
+      }
+
+      .btn-primary {
+        background-color: #89bdca;
+        color: #fff;
+      }
+
+      form.policy {
+        display: flex;
+        justify-content: space-around;
       }
 
       .bold-underline {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      .tos-check {
         font-weight: bold;
         text-decoration: underline;
       }
@@ -84,7 +132,7 @@
         <ol>
           <li>本服務目前處於<span class="bold-underline">公開測試，不保證顯示資料送出就算成功掛號</span>。</li><br/>
           <li>預約送出後，<span class="bold-underline">請檢查收件匣或垃圾郵件匣，確認是否有收到掛號確認</span>。<br/>
-            若沒有收到請使用<span class="bold-underline"><a id=query href="javascript:">掛號查詢功能</a></span>，或聯絡本廟確認。</li><br/>
+            若沒有收到請使用<span class="bold-underline"><a href="https://sites.google.com/view/lkch/%E9%A0%90%E7%B4%84%E6%9F%A5%E8%A9%A2">掛號查詢功能</a></span>，或聯絡本廟確認。</li><br/>
           <li><span class="bold-underline">由親屬代問者，表單最下方的聯絡資訊欄，請填寫到場者的資料。</span>。</li><br/>
           <li><span class="bold-underline">問事前一日，不再接受預約掛號</span>，若要追加掛號，請當日至現場等候現場加掛。</li><br/>
           <li>報到開始後，會<span class="bold-underline">依到場順序發放叫號器，並依序辦理</span>。</li><br/>
@@ -114,7 +162,7 @@
       <form class="policy">
         <div>
           <input type="checkbox" id="tos" />
-          <label for="tos"><span class="bold-underline">我同意並遵守本頁面所有規則</span></label>
+          <label for="tos"><span class="toscheck">我同意並遵守本頁面所有規則</span></label>
         </div>
         <button id="agree" type="button" class="btn btn-primary" disabled>
           開始填寫預約掛號
@@ -123,11 +171,9 @@
     </div>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // 獲取按鈕元素和 checkbox 元素
         const submitButton = document.getElementById("agree");
         const checkbox = document.getElementById("tos");
-        const query = document.getElementById("query");
-                               
+
         // 監聽 checkbox 的變化事件
         checkbox.addEventListener("change", function () {
           // 根據 checkbox 的選中狀態來啟用或停用按鈕
@@ -139,7 +185,8 @@
         submitButton.addEventListener("click", function (event) {
           // 防止表單的實際提交動作，因為我們將使用 JavaScript 處理
           if (checkbox.checked) {
-            window.location.href = "/reserve.htm";
+            window.location.href =
+              "/reserve.htm";
           }
         });
       });
