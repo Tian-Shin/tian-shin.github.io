@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>列表顯示</title>
+</head>
+<body>
+  <h1>JSON 內容列表</h1>
+  <ul id="jsonList"></ul>
+
+  <script>
+    // 請將下面的 URL 替換為你的 JSON 資料的網址
+    const url = "https://ap9.ragic.com/tienshin/forms10/2?api&listing";
+
+    // 使用 fetch 來取得 JSON 資料
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const jsonList = document.getElementById("jsonList");
+
+        // 遍歷 JSON 資料並以列表方式顯示
+        data.forEach(item => {
+          const listItem = document.createElement("li");
+          listItem.textContent = JSON.stringify(item);
+          jsonList.appendChild(listItem);
+        });
+      })
+      .catch(error => {
+        console.error("發生錯誤：", error);
+      });
+  </script>
+</body>
+</html>
