@@ -13,9 +13,7 @@
   <ul id="jsonList"></ul>
 
   <script>
-    // 請將下面的 URL 替換為你的 JSON 資料的網址
     const url = "https://ap9.ragic.com/tienshin/forms10/2?api&listing";
-
     // 使用 fetch 來取得 JSON 資料
 fetch(url)
   .then(response => {
@@ -25,21 +23,23 @@ fetch(url)
     return response.json();
   })
   .then(data => {
+    // 將物件轉換為陣列
+    const dataArray = Object.values(data);
+
+    const last50Data = dataArray.slice(-50);
+
     const jsonList = document.getElementById("jsonList");
 
-    for (const key in data) {
-      if (data.hasOwnProperty(key)) {
-        const item = data[key];
-        const listItem = document.createElement("li");
-        const details = `
-          日期: ${item["日期"]}<br>
-          姓名: ${item["姓名"]}<br>
-          金額: ${item["金額"]}
-        `;
-        listItem.innerHTML = details;
-        jsonList.appendChild(listItem);
-      }
-    }
+    last50Data.forEach(item => {
+      const listItem = document.createElement("li");
+      const details = `
+        日期: ${item["日期"]}<br>
+        姓名: ${item["姓名"]}<br>
+        金額: ${item["金額"]}
+      `;
+      listItem.innerHTML = details;
+      jsonList.appendChild(listItem);
+    });
   })
   .catch(error => {
     console.error("發生錯誤：", error);
