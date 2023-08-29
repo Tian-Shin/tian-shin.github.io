@@ -14,21 +14,33 @@
     const url = "https://ap9.ragic.com/tienshin/forms10/2?api&listing";
 
     // 使用 fetch 來取得 JSON 資料
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        const jsonList = document.getElementById("jsonList");
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('網路請求錯誤');
+    }
+    return response.json();
+  })
+  .then(data => {
+    const jsonList = document.getElementById("jsonList");
 
-        // 遍歷 JSON 資料並以列表方式顯示
-        data.forEach(item => {
-          const listItem = document.createElement("li");
-          listItem.textContent = JSON.stringify(item);
-          jsonList.appendChild(listItem);
-        });
-      })
-      .catch(error => {
-        console.error("發生錯誤：", error);
-      });
+    for (const key in data) {
+      if (data.hasOwnProperty(key)) {
+        const item = data[key];
+        const listItem = document.createElement("li");
+        const details = `
+          日期: ${item["日期"]}<br>
+          姓名: ${item["姓名"]}<br>
+          金額: ${item["金額"]}
+        `;
+        listItem.innerHTML = details;
+        jsonList.appendChild(listItem);
+      }
+    }
+  })
+  .catch(error => {
+    console.error("發生錯誤：", error);
+  });
   </script>
 </body>
 </html>
