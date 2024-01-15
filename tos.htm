@@ -8,18 +8,6 @@
     <title>鹿港城隍廟線上預約掛號</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet"/>
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4C86YKGQS1">
-    </script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-4C86YKGQS1");
-    </script>
-    
     <!-- Meta Pixel Code -->  
     <script>
       !function(f,b,e,v,n,t,s)
@@ -121,23 +109,21 @@
   </head>
   <body>
     <div class="container panel">
-      <h1>掛號前須知</h1>
+      <h1>掛號前說明</h1>
       <p>
         <ol>
           <li>所有問事或辦理儀式（含補運、祭改等）者，都需完成登記，<span class="bold-underline">未登記則恕不受理</span>。</li><br/>
-          <li>若登記的本人無法到場，<span class="bold-underline">僅可由親屬代問</span>。</li><br/>
-          <li>若<span class="bold-underline">本人未到場，需攜帶本人穿過洗淨的衣服一件</span>。</li><br/>
+          <li>若登記的本人無法到場，<span class="bold-underline">僅可由親屬代問，需攜帶本人穿過洗淨的衣服一件</span>。</li><br/>
           <li>若要詢問或超渡先亡，請先查詢好<span class="bold-underline">牌位或塔位的地址</span>。</li><br/>
-          <li>現場加掛將於開辦後開放，但<span class="bold-underline">不保證</span>每個場次都會開放。</li><br/>
+          <li>現場加掛將於開辦後開放，但<span class="bold-underline">不保證</span>每個場次都一定會開放。</li><br/>
           <li><span class="bold-underline">單純問事無須費用</span>，若對儀式費用有疑問可當場詢問，或拒絕辦理儀式。</li><br/>
         </ol>
       </p>
-      <br/>
       <h1>掛號須知</h1>
       <p>
         <ol>
           <li>本服務目前處於<span class="bold-underline">公開測試</span>，預約送出後，<span class="bold-underline">請檢查收件匣或垃圾郵件匣，確認是否有收到掛號確認</span>。<br/>
-            若沒有收到請使用<span class="bold-underline"><a href="./query.htm" target="_blank">掛號查詢</a></span>，或聯絡本廟確認。</li><br/>
+            若沒有收到請使用<span class="bold-underline"><a href="https://tian-shin.github.io/inquiry.htm" target="_blank">掛號查詢</a></span>，或於上班時間<span class="bold-underline"><a href="https://sites.google.com/view/lkch/%E8%81%AF%E7%B5%A1%E5%8F%8A%E4%BA%A4%E9%80%9A%E8%B3%87%E8%A8%8A" target="_blank">聯絡本廟</a></span>確認。</li><br/>
           <li><span class="bold-underline">由親屬代問者，表單最下方的聯絡資訊欄，請填寫到場者的資料。</span>。</li><br/>
           <li><span class="bold-underline">問事前一日，不再接受預約掛號</span>，若要追加掛號，請當日至現場等候現場加掛。</li><br/>
           <li>報到開始後，會<span class="bold-underline">依到場順序發放叫號器，並依序辦理</span>。</li><br/>
@@ -146,12 +132,11 @@
           <li>若需變更日期、姓名或取消預約，請電話聯絡本廟。</li><br/>
         </ol>
     </p>
-      <br/>
-      <br/>
       <h2>規則與免責聲明</h2>
       <p>
         <ol>
           <li>不得濫用、破壞、干擾服務，或是導致服務中斷，例如以詐欺或詐騙手法存取或使用服務、導入惡意軟體、濫發垃圾內容、入侵或規避我們的系統或保護措施。</li><br/>
+          <li>本線上服務不保證資料的正確性及服務可靠性，一切以廟方解釋為準。</li><br/>
           <li>問事服務僅是以宗教角度給予建議，或藉由儀式等行為給予精神上的支持，各專門領域事件的應自行向各領域專家了解詳情，並應以自身自由意志決定人生方向。</li><br/>
           <li>本廟不會強迫參與者應參與任何活動或儀式，或代替您做任何決定。參與者應為自身的決定完全負責，本廟不就任何狀況負任何責任。</li><br/>
           <li>本廟擁有包括但不限於規則的變更、解釋及活動的辦理、變更與取消的權力。除了活動的取消外，我們不會對任何變更進行通知。</li><br/>
@@ -173,26 +158,29 @@
         </button>
       </form>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const submitButton = document.getElementById("agree");
-        const checkbox = document.getElementById("tos");
-
-        // 監聽 checkbox 的變化事件
-        checkbox.addEventListener("change", function () {
-          // 根據 checkbox 的選中狀態來啟用或停用按鈕
-          submitButton.disabled = !checkbox.checked;
-          submitButton.hidden = !checkbox.checked;
-        });
-
-        // 在按鈕上添加點擊事件的監聽器
-        submitButton.addEventListener("click", function (event) {
-          // 防止表單的實際提交動作，因為我們將使用 JavaScript 處理
-          if (checkbox.checked) {
-            window.location.href = "./reserve.htm";
-          }
-        });
-      });
-    </script>
-  </body>
-</html>
+    <script>     
+	document.addEventListener("DOMContentLoaded", function () {       
+	const submitButton = document.getElementById("agree");       
+	const checkbox = document.getElementById("tos");           
+	// 監聽 checkbox 的變化事件                         
+	checkbox.addEventListener("change", function () {    
+	// 根據 checkbox 的選中狀態來啟用或停用按鈕
+    submitButton.disabled = !checkbox.checked;    
+    submitButton.hidden = !checkbox.checked;      
+	});
+	
+	// 在按鈕上添加點擊事件的監聽器           
+	submitButton.addEventListener("click", function (event) {  
+    if (checkbox.checked) {                 
+	window.location.href = "https://tian-shin.github.io/reserve.htm";  
+	window.scrollTo({         
+	top: 0,                          
+	behavior: "smooth" // 讓捲動有平滑的效果 
+	});  
+    }
+  });  
+  });   
+  </script>   
+  </body>   
+  </html>  
+ 
